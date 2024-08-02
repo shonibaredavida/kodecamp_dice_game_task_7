@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:kodecamp_dice_game_task_7/dice_roller.dart';
-import 'package:kodecamp_dice_game_task_7/home.dart';
 
 class SplashScreenController extends GetxController {
   @override
@@ -13,7 +12,7 @@ class SplashScreenController extends GetxController {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        Get.off(Home());
+        Get.off(const DiceRoller());
       },
     );
   }
