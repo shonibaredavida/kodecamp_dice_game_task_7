@@ -24,7 +24,6 @@ class DiceRollController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     currentDice.value = "assets/one.png";
     super.onInit();
   }
