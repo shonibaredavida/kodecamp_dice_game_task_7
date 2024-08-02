@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kodecamp_dice_game_task_7/controllers/dice_rolll_controller.dart';
+import 'package:kodecamp_dice_game_task_7/utils/constants/colors.dart';
 import 'package:kodecamp_dice_game_task_7/utils/constants/sizes.dart';
 
 class DiceRollerScreen extends StatelessWidget {
@@ -13,7 +14,7 @@ class DiceRollerScreen extends StatelessWidget {
     final controller = Get.put(DiceRollController());
     return Scaffold(
       body: Container(
-        color: Colors.black,
+        color: backgroundColor,
         child: Stack(children: [
           Positioned(
             top: 40,
@@ -22,14 +23,15 @@ class DiceRollerScreen extends StatelessWidget {
               return Text.rich(
                 TextSpan(
                     text: controller.currentTurn.toString(),
-                    style: const TextStyle(
-                        fontSize: DiceSizes.fontSizeTitle, color: Colors.red),
-                    children: const [
+                    style: TextStyle(
+                        fontSize: DiceSizes.fontSizeTitle * 1.3,
+                        color: errorRed),
+                    children: [
                       TextSpan(
                         text: "/6",
                         style: TextStyle(
-                            fontSize: DiceSizes.fontSizeTitle * .8,
-                            color: Colors.white),
+                            fontSize: DiceSizes.fontSizeTitle,
+                            color: whiteColor),
                       )
                     ]),
               );
@@ -63,10 +65,12 @@ class DiceRollerScreen extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          backgroundColor: controller.thrownValues.length < 6
-                              ? Colors.yellow
-                              : Colors.red.withOpacity(0.3),
-                          foregroundColor: Colors.black,
+                          backgroundColor: controller.isLoading
+                              ? greyColor.withOpacity(0.7)
+                              : controller.thrownValues.length < 6
+                                  ? amberColor
+                                  : errorRed.withOpacity(0.31),
+                          foregroundColor: backgroundColor,
                           textStyle: const TextStyle(fontSize: 28),
                         ),
                         child: Padding(
@@ -78,8 +82,8 @@ class DiceRollerScreen extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: DiceSizes.fontSizeTitle,
                                 color: controller.thrownValues.length < 6
-                                    ? Colors.black
-                                    : Colors.white),
+                                    ? backgroundColor
+                                    : whiteColor),
                           ),
                         ),
                       );

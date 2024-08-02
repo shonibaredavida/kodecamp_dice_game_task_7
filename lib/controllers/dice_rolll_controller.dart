@@ -18,8 +18,8 @@ class DiceRollController extends GetxController {
     thrownValues = [];
     displayText.value = "";
     refresh();
-    print(thrownValues);
-    print("restart Game");
+    //print(thrownValues);
+    //print("restart Game");
   }
 
   @override
@@ -39,7 +39,7 @@ class DiceRollController extends GetxController {
       longDuration: true,
     );
     await Future.delayed(const Duration(milliseconds: 1200), () {
-      print(thrownValues);
+      //print(thrownValues);
     });
   }
 
@@ -93,7 +93,7 @@ class DiceRollController extends GetxController {
       await displaValuesList();
       refresh();
     }
-    print(thrownValues);
+    //print(thrownValues);
 
     _isLoading.value = false;
     refresh();

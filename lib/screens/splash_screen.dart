@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kodecamp_dice_game_task_7/controllers/splash_screen_controller.dart';
+import 'package:kodecamp_dice_game_task_7/utils/constants/colors.dart';
 import 'package:kodecamp_dice_game_task_7/utils/constants/sizes.dart';
 
 import '../utils/constants/images.dart';
@@ -14,7 +15,7 @@ class SplashScreen extends StatelessWidget {
     Get.put(SplashScreenController());
     return Scaffold(
       body: Container(
-        color: Colors.black54,
+        color: splashBackgroundColor,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
