@@ -33,7 +33,7 @@ class DiceRollController extends GetxController {
       displayText.value += "$value, ";
     }
     diceToast(
-      text: "Selcted Values: ${displayText.value}",
+      text: "Selected Numbers: ${displayText.value}",
       fontsize: DiceSizes.fontSizeXXLg,
       longDuration: true,
     );
@@ -82,7 +82,7 @@ class DiceRollController extends GetxController {
     }
     //An odd number throw
     else {
-      diceToast(text: "An odd number thrown");
+      diceToast(text: "An odd number is thrown");
       thrownValues.add(value + 1);
     }
     //thrownValues.length == 6
