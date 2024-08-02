@@ -13,6 +13,7 @@ class DiceSizes {
   static const double fontSizeMs = 14.0;
   static const double fontSizeMd = 16.0;
   static const double fontSizeLg = 18.0;
+  static const double fontSizeTitle = 32.0;
 
   //Default spacing between sections
   static const double defaultSpace = 24.0;
