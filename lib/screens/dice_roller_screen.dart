@@ -22,7 +22,7 @@ class DiceRollerScreen extends StatelessWidget {
             child: GetBuilder<DiceRollController>(builder: (controller) {
               return Text.rich(
                 TextSpan(
-                    text: controller.currentTurn.toString(),
+                    text: controller.thrownValues.length.toString(),
                     style: TextStyle(
                         fontSize: DiceSizes.fontSizeTitle * 1.3,
                         color: errorRed),
